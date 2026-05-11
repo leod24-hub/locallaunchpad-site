@@ -520,8 +520,7 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.05);paddin
   <a href="#" onclick="showPage('pricing',null,event);toggleMenu()">Pricing</a>
   <a href="#" onclick="showPage('about',null,event);toggleMenu()">About</a>
   <a href="#" onclick="showPage('legal',null,event);toggleMenu()">Legal</a>
-  <a href="#" onclick="showPage('contact',null,event);toggleMenu()">Book a call</a>
-  <a href="#" onclick="showPage('home',null,event);toggleMenu();setTimeout(()=>document.getElementById('book').scrollIntoView({behavior:'smooth'}),80)" style="color:var(--amber);font-weight:700">Book a call →</a>
+  <a href="#" onclick="showPage('contact',null,event);toggleMenu()" style="color:var(--amber);font-weight:700">Book a call →</a>
 </div>
 
 
@@ -532,9 +531,8 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.05);paddin
   <div class="hbadge"><div class="hbadge-dot"></div><span>LOCAL WEB STUDIO — NJ &amp; NY</span></div>
   <h1>Websites that<br><span class="ob">get you calls.</span><br><span class="oa">In 7 days.</span></h1>
   <p>Fast, modern websites for local businesses — built to turn mobile visitors into calls, bookings, and appointments.</p>
-  <div class="hctas">
-    <a href="#" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'});return false;" class="btn-amber">See your free preview &rarr;</a>
-    <a href="#" onclick="showPage('contact',null,event);return false;" class="btnout">Book a 10-min call</a>
+  <div class="hctas" style="justify-content:center">
+    <a href="#" onclick="showPage('contact',null,event);return false;" class="btn-amber" style="font-size:17px;padding:16px 40px">See your free website preview &rarr;</a>
   </div>
   <div class="hstats">
     <div class="hst"><div class="hst-n" data-count="7">0</div><div class="hst-l">day delivery</div></div>
@@ -615,7 +613,7 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.05);paddin
   <div class="gbadge">7</div>
   <h2>The 7-day guarantee</h2>
   <p>Your new site goes live in 7 business days — or we refund 25% of the project fee. No exceptions, no excuses.</p>
-  <a href="#" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})" class="btnw">Get started today</a>
+  <a href="#" onclick="showPage('contact',null,event)" class="btnw">See your free website preview &rarr;</a>
 </section>
 
 <!-- TICKER 3 — reviews, sky bg, forward -->
@@ -663,8 +661,7 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.05);paddin
   <h2 class="reveal up">Ready to see your<br><span>free preview?</span></h2>
   <p class="reveal up d1">We build a personalized concept for your business. No commitment. No credit card.</p>
   <div class="fctabs reveal up d2">
-    <a href="mailto:hello@locallaunchpad.app?subject=Free%20Website%20Preview%20Request&body=Hi%20LocalLaunchpad%20team%2C%0A%0AI%27d%20like%20to%20see%20a%20free%20concept%20preview%20for%20my%20business.%0A%0ABusiness%20name%3A%20%0AWebsite%20(if%20I%20have%20one)%3A%20%0APhone%3A%20" class="btn-amber" style="font-size:17px;padding:18px 36px">Get my free preview</a>
-    <a href="#" onclick="showPage('contact',null,event);return false;" class="btn-ghost">Book a 10-min call</a>
+    <a href="#" onclick="showPage('contact',null,event);return false;" class="btn-amber" style="font-size:17px;padding:18px 40px">See your free website preview &rarr;</a>
   </div>
 </section>
 
@@ -1177,7 +1174,7 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.05);paddin
   <div style="margin-top:64px;background:var(--navy);border-radius:var(--rl);padding:40px;text-align:center">
     <div style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:10px">Want to see one built for your business?</div>
     <div style="font-size:15px;color:rgba(255,255,255,.5);margin-bottom:24px">We'll build a free concept — no cost, no commitment.</div>
-    <a href="#" onclick="showPage('home',null,event);setTimeout(()=>document.getElementById('book').scrollIntoView({behavior:'smooth'}),80)" class="btn-amber" style="font-size:15px;padding:14px 32px">Get your free preview &rarr;</a>
+    <a href="#" onclick="showPage('contact',null,event)" class="btn-amber" style="font-size:15px;padding:14px 32px">See your free website preview &rarr;</a>
   </div>
 
 </section>
@@ -1307,7 +1304,7 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.05);paddin
         <div style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:8px">Ready to see what we'd build for you?</div>
         <div style="font-size:14px;color:rgba(255,255,255,.5)">Free concept preview — no commitment, no credit card.</div>
       </div>
-      <a href="#" onclick="showPage('home',null,event);setTimeout(()=>document.getElementById('book').scrollIntoView({behavior:'smooth'}),80)" class="btn-amber" style="white-space:nowrap;padding:14px 28px;font-size:15px">Get your free preview &rarr;</a>
+      <a href="#" onclick="showPage('contact',null,event)" class="btn-amber" style="white-space:nowrap;padding:14px 28px;font-size:15px">See your free website preview &rarr;</a>
     </div>
 
   </div>
@@ -1324,9 +1321,7 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.05);paddin
 
 <div style="background:var(--sky-bg);padding:80px 56px;position:relative;z-index:1">
   <div style="max-width:760px;margin:0 auto">
-    <div class="slabel reveal up">LEGAL</div>
-    <h2 class="big reveal up d1">Terms &amp; Conditions</h2>
-    <p style="font-size:13px;color:var(--dim);margin-bottom:40px" class="reveal up d2">Last updated: May 2026 &nbsp;·&nbsp; LocalLaunchpad &nbsp;·&nbsp; locallaunchpad.app</p>
+
 
     <div style="display:flex;flex-direction:column;gap:32px" class="reveal up d3">
 
@@ -1598,7 +1593,7 @@ function showPage(page, el, e) {
   const target = document.getElementById('page-' + page);
   if (target) {
     target.style.display = 'block';
-    requestAnimationFrame(() => target.classList.add('active'));
+    requestAnimationFrame(() => { target.classList.add('active'); if(page==='home') runCounters(target); });
   }
   // Update active nav link
   document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('nav-active'));
@@ -1634,9 +1629,8 @@ const obs = new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.t
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 // COUNT UP
-function ac(el){const t=parseInt(el.dataset.count),pre=el.dataset.pre||'',suf=el.dataset.suf||'',dur=2400,s=performance.now();function u(n){const p=Math.min((n-s)/dur,1),e2=1-Math.pow(1-p,4);el.textContent=pre+Math.round(e2*t)+suf;if(p<1)requestAnimationFrame(u)}requestAnimationFrame(u)}
-const co=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){ac(e.target);co.unobserve(e.target)}})},{threshold:.5});
-document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+function ac(el){const t=parseInt(el.dataset.count),pre=el.dataset.pre||'',suf=el.dataset.suf||'',dur=2000,s=performance.now();function u(n){const p=Math.min((n-s)/dur,1),e2=1-Math.pow(1-p,4);el.textContent=pre+Math.round(e2*t)+suf;if(p<1)requestAnimationFrame(u)}requestAnimationFrame(u)}
+function runCounters(pageEl){if(!pageEl)return;pageEl.querySelectorAll('[data-count]').forEach(el=>ac(el));}
 
 // FAQ
 function tf(el){const i=el.parentElement,o=i.classList.contains('open');document.querySelectorAll('.fi').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')}
