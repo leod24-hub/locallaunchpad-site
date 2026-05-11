@@ -1540,34 +1540,52 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.05);paddin
 
 // CONTACT FORM
 function handleSubmit(e) {
+  e.preventDefault();
   const form = document.getElementById('contactForm');
   const btn = document.getElementById('submitBtn');
   const success = document.getElementById('formSuccess');
-  const action = form.action;
 
-  if (action.includes('YOUR_FORM_ID')) {
-    // Formspree not configured yet — fall back to mailto
-    e.preventDefault();
-    const name = form.name.value;
-    const business = form.business.value;
-    const email = form.email.value;
-    const phone = form.phone.value;
-    const website = form.website.value || 'None';
-    const pkg = form.package.value;
-    const message = form.message.value || 'Not provided';
-    const body = `Name: ${name}%0ABusiness: ${business}%0AEmail: ${email}%0APhone: ${phone}%0AWebsite: ${website}%0APackage interest: ${pkg}%0AMain issue: ${message}`;
-    window.location.href = `mailto:leo@locallaunchpad.app?subject=Website%20Inquiry%20from%20${encodeURIComponent(business)}&body=${body}`;
+  // Read fields safely using FormData
+  const fd = new FormData(form);
+  const name     = fd.get('name')     || '';
+  const business = fd.get('business') || '';
+  const email    = fd.get('email')    || '';
+  const phone    = fd.get('phone')    || '';
+  const website  = fd.get('website')  || 'None';
+  const pkg      = fd.get('package')  || 'Not selected';
+  const message  = fd.get('message')  || 'Not provided';
+
+  const action = form.getAttribute('action');
+
+  if (!action || action.includes('YOUR_FORM_ID')) {
+    // Formspree not set up yet — send via mailto
+    const subject = encodeURIComponent('New Website Inquiry — ' + business);
+    const body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Business: ' + business + '\n' +
+      'Email: ' + email + '\n' +
+      'Phone: ' + phone + '\n' +
+      'Website: ' + website + '\n' +
+      'Package interest: ' + pkg + '\n' +
+      'Biggest issue: ' + message
+    );
+    window.location.href = 'mailto:leo@locallaunchpad.app?subject=' + subject + '&body=' + body;
+    // Show success after short delay
+    setTimeout(() => {
+      form.style.display = 'none';
+      success.style.display = 'block';
+    }, 800);
     return;
   }
 
-  // Formspree submission
-  e.preventDefault();
+  // Formspree submission (once YOUR_FORM_ID is replaced)
   btn.textContent = 'Sending...';
   btn.style.opacity = '.7';
+  btn.disabled = true;
 
   fetch(action, {
     method: 'POST',
-    body: new FormData(form),
+    body: fd,
     headers: { 'Accept': 'application/json' }
   }).then(r => {
     if (r.ok) {
@@ -1576,10 +1594,12 @@ function handleSubmit(e) {
     } else {
       btn.textContent = 'Something went wrong — try again';
       btn.style.opacity = '1';
+      btn.disabled = false;
     }
   }).catch(() => {
     btn.textContent = 'Something went wrong — try again';
     btn.style.opacity = '1';
+    btn.disabled = false;
   });
 }
 
